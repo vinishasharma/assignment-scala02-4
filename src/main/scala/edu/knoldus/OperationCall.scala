@@ -10,16 +10,16 @@ object OperationCall {
     val totalCommission = new TotalCommission
     val clientCommission1 = new ClientSideCommission(3)
     val clientCommission2 = new ClientSideCommission(3)
-    val clientCommissionList = List(clientCommission1,clientCommission2)
-    val clientCommission = totalCommission.getTotalCommission(clientCommissionList)
+    val clientCommissionList = List(clientCommission1, clientCommission2)
+    val clientCommission = totalCommission.getTotalCommission[ClientSideCommission](clientCommissionList)
     log.info(clientCommission)
 
     val streetCommission1 = new StreetSideCommission(2)
     val streetCommissionList = List(streetCommission1)
-    val streetCommission = totalCommission.getTotalCommission(streetCommissionList)
+    val streetCommission = totalCommission.getTotalCommission[StreetSideCommission](streetCommissionList)
     log.info(s"\n$streetCommission")
 
-    val mixedList = List(clientCommission1,streetCommission1)
+    val mixedList = List(clientCommission1, streetCommission1)
     val commission = totalCommission.getTotalCommission[Commission](mixedList)
     log.info(s"\n$commission")
   }
