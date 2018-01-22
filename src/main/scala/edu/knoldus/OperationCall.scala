@@ -18,5 +18,9 @@ object OperationCall {
     val streetCommissionList = List(streetCommission1)
     val streetCommission = totalCommission.getTotalCommission(streetCommissionList)
     log.info(s"\n$streetCommission")
+
+    val mixedList = List(clientCommission1,streetCommission1)
+    val commission = totalCommission.getTotalCommission[Commission](mixedList)
+    log.info(s"\n$commission")
   }
 }

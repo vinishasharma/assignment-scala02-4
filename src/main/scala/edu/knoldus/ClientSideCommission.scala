@@ -1,3 +1,3 @@
 package edu.knoldus
 
-case class ClientSideCommission(value: Int) extends Commission
+case class ClientSideCommission(override val value: Int) extends Commission(value: Int)

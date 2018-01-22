@@ -1,3 +1,3 @@
 package edu.knoldus
 
-case class StreetSideCommission(value: Int) extends Commission
+case class StreetSideCommission(override val value: Int) extends Commission(value: Int)
